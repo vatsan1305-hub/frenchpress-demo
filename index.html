@@ -22,7 +22,7 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
   body {
     font-family: var(--sans);
     background: var(--cream);
@@ -35,9 +35,15 @@
   .wrap { width: min(1100px, 100% - 2rem); margin-inline: auto; }
 
   /* ---------- Nav ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250, 243, 231, .92);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
   .nav {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.25rem 0;
+    padding: 1rem 0;
   }
   .logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; text-decoration: none; letter-spacing: .01em; }
   .logo span { color: var(--copper); font-style: italic; }
@@ -46,7 +52,7 @@
   @media (max-width: 520px) { .nav a.link { display: none; } }
 
   /* ---------- Hero ---------- */
-  .hero { padding: 2rem 0 5rem; }
+  .hero { padding: 3rem 0 5rem; }
   .hero .wrap {
     display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center;
   }
@@ -54,7 +60,7 @@
     display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .18em;
     text-transform: uppercase; color: var(--copper); margin-bottom: 1rem;
   }
-  .hero h1 { font-size: clamp(2.3rem, 5.5vw, 4rem); margin-bottom: 1.25rem; }
+  .hero h1 { font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1.05; margin-bottom: 1.5rem; }
   .hero h1 em { color: var(--copper); font-style: italic; }
   .hero p.lead { font-size: 1.1rem; color: var(--brown-soft); max-width: 34rem; margin-bottom: 2rem; }
   .btn {
@@ -185,12 +191,14 @@
 </head>
 <body>
 
-<header class="wrap nav">
-  <a class="logo" href="#top">Kettle <span>&amp;</span> Bloom</a>
-  <nav>
-    <a class="link" href="#collection">Collection</a>
-    <a class="link" href="#brew">How to brew</a>
-  </nav>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="#top">Kettle <span>&amp;</span> Bloom</a>
+    <nav>
+      <a class="link" href="#collection">Collection</a>
+      <a class="link" href="#brew">How to brew</a>
+    </nav>
+  </div>
 </header>
 
 <main id="top">
