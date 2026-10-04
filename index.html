@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kettle &amp; Bloom — Premium French Presses</title>
+<meta name="description" content="Kettle & Bloom crafts premium French presses for slow, unhurried mornings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf3e7;
+    --cream-deep: #f1e5d0;
+    --brown: #3b2417;
+    --brown-soft: #6b4a37;
+    --copper: #b8642f;
+    --copper-dark: #9a4f20;
+    --line: #e2d2b8;
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--brown);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; }
+  a { color: inherit; }
+  .wrap { width: min(1100px, 100% - 2rem); margin-inline: auto; }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 0;
+  }
+  .logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; text-decoration: none; letter-spacing: .01em; }
+  .logo span { color: var(--copper); font-style: italic; }
+  .nav a.link { font-size: .9rem; text-decoration: none; color: var(--brown-soft); margin-left: 1.5rem; }
+  .nav a.link:hover { color: var(--copper); }
+  @media (max-width: 520px) { .nav a.link { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 2rem 0 5rem; }
+  .hero .wrap {
+    display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center;
+  }
+  .eyebrow {
+    display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--copper); margin-bottom: 1rem;
+  }
+  .hero h1 { font-size: clamp(2.3rem, 5.5vw, 4rem); margin-bottom: 1.25rem; }
+  .hero h1 em { color: var(--copper); font-style: italic; }
+  .hero p.lead { font-size: 1.1rem; color: var(--brown-soft); max-width: 34rem; margin-bottom: 2rem; }
+  .btn {
+    display: inline-block; background: var(--copper); color: #fff; text-decoration: none;
+    font-weight: 600; padding: .95rem 2rem; border-radius: 999px;
+    box-shadow: 0 8px 20px -8px rgba(184, 100, 47, .7);
+    transition: background .2s, transform .2s;
+  }
+  .btn:hover { background: var(--copper-dark); transform: translateY(-2px); }
+  .btn:focus-visible { outline: 3px solid var(--brown); outline-offset: 3px; }
+  .hero .note { margin-top: 1.25rem; font-size: .85rem; color: var(--brown-soft); }
+
+  /* CSS-drawn French press */
+  .art {
+    display: grid; place-items: center; min-height: 360px;
+    background: radial-gradient(circle at 50% 45%, var(--cream-deep) 0 58%, transparent 59%);
+  }
+  .press { position: relative; width: 190px; height: 290px; }
+  .press .knob {
+    position: absolute; top: 0; left: 50%; width: 30px; height: 30px; margin-left: -15px;
+    background: var(--copper); border-radius: 50%;
+  }
+  .press .rod {
+    position: absolute; top: 26px; left: 50%; width: 8px; height: 44px; margin-left: -4px;
+    background: var(--brown-soft);
+  }
+  .press .lid {
+    position: absolute; top: 62px; left: 0; width: 100%; height: 22px;
+    background: var(--brown); border-radius: 10px 10px 4px 4px;
+  }
+  .press .glass {
+    position: absolute; top: 82px; left: 12px; right: 12px; height: 190px;
+    border: 3px solid var(--brown); border-top: none; border-radius: 0 0 20px 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,.35) 0 18%, #5a3825 18% 100%);
+    overflow: hidden;
+  }
+  .press .glass::after { /* highlight */
+    content: ""; position: absolute; top: 8px; left: 12px; width: 10px; height: 80%;
+    background: rgba(255,255,255,.25); border-radius: 10px;
+  }
+  .press .crema {
+    position: absolute; left: 0; right: 0; top: 34px; height: 14px;
+    background: #c98a55; opacity: .85;
+  }
+  .press .frame {
+    position: absolute; top: 74px; left: 0; width: 100%; height: 206px;
+    border-left: 8px solid var(--copper); border-right: 8px solid var(--copper);
+    border-radius: 0 0 26px 26px; border-bottom: 10px solid var(--copper);
+    pointer-events: none;
+  }
+  .press .handle {
+    position: absolute; top: 110px; right: -46px; width: 56px; height: 110px;
+    border: 9px solid var(--copper); border-left: none; border-radius: 0 60px 60px 0;
+  }
+  .steam { position: absolute; top: -44px; left: 50%; width: 100%; height: 40px; margin-left: -50%; display: flex; justify-content: center; gap: 18px; opacity: .45; }
+  .steam i { width: 6px; height: 40px; border-radius: 6px; background: var(--brown-soft); animation: rise 3s ease-in-out infinite; }
+  .steam i:nth-child(2) { animation-delay: .8s; height: 32px; }
+  .steam i:nth-child(3) { animation-delay: 1.6s; }
+  @keyframes rise { 0%,100% { transform: translateY(6px) scaleY(.8); opacity: .3 } 50% { transform: translateY(-6px) scaleY(1); opacity: 1 } }
+
+  @media (max-width: 800px) {
+    .hero .wrap { grid-template-columns: 1fr; text-align: center; gap: 1rem; }
+    .hero p.lead { margin-inline: auto; }
+    .art { order: -1; min-height: 320px; }
+  }
+
+  /* ---------- Section shared ---------- */
+  section { padding: 5rem 0; }
+  .head { text-align: center; max-width: 36rem; margin: 0 auto 3rem; }
+  .head h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: .75rem; }
+  .head p { color: var(--brown-soft); }
+
+  /* ---------- Products ---------- */
+  .products { background: var(--cream-deep); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .card {
+    background: var(--cream); border: 1px solid var(--line); border-radius: 20px;
+    padding: 2rem 1.75rem; text-align: center;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 20px 35px -20px rgba(59, 36, 23, .4); }
+  .card .icon {
+    width: 84px; height: 84px; margin: 0 auto 1.25rem; border-radius: 50%;
+    display: grid; place-items: center; font-size: 2.4rem;
+    background: var(--cream-deep); border: 2px solid var(--copper);
+  }
+  .card h3 { font-size: 1.4rem; margin-bottom: .35rem; }
+  .card .price { font-family: var(--serif); font-size: 1.6rem; color: var(--copper); margin-bottom: .6rem; }
+  .card p { color: var(--brown-soft); font-size: .95rem; }
+  .card.featured { border-color: var(--copper); position: relative; }
+  .card.featured::before {
+    content: "Bestseller"; position: absolute; top: -.8rem; left: 50%; transform: translateX(-50%);
+    background: var(--copper); color: #fff; font-size: .72rem; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase; padding: .25rem .8rem; border-radius: 999px;
+  }
+  @media (max-width: 800px) { .cards { grid-template-columns: 1fr; max-width: 28rem; margin-inline: auto; } }
+
+  /* ---------- Brew steps ---------- */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; list-style: none; counter-reset: step; }
+  .steps li { position: relative; padding: 1.5rem 1.25rem; border-top: 3px solid var(--copper); background: var(--cream); }
+  .steps li::before {
+    counter-increment: step; content: "0" counter(step);
+    font-family: var(--serif); font-size: 2.4rem; font-weight: 700; color: var(--copper); opacity: .35;
+    display: block; line-height: 1; margin-bottom: .75rem;
+  }
+  .steps .emoji { font-size: 1.6rem; display: block; margin-bottom: .5rem; }
+  .steps h3 { font-size: 1.2rem; margin-bottom: .4rem; }
+  .steps p { color: var(--brown-soft); font-size: .95rem; }
+  @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--brown); color: var(--cream-deep); padding: 3.5rem 0 2rem; }
+  footer .cols { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; margin-bottom: 2.5rem; }
+  footer .logo { color: var(--cream); display: inline-block; margin-bottom: .5rem; }
+  footer p { font-size: .9rem; opacity: .8; max-width: 22rem; }
+  footer h4 { font-family: var(--serif); color: var(--cream); font-size: 1rem; margin-bottom: .6rem; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: .35rem; font-size: .9rem; }
+  footer a { text-decoration: none; opacity: .8; }
+  footer a:hover { opacity: 1; color: #e0925f; }
+  footer .legal { border-top: 1px solid rgba(250, 243, 231, .15); padding-top: 1.25rem; font-size: .8rem; opacity: .65; text-align: center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap nav">
+  <a class="logo" href="#top">Kettle <span>&amp;</span> Bloom</a>
+  <nav>
+    <a class="link" href="#collection">Collection</a>
+    <a class="link" href="#brew">How to brew</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Premium French presses</span>
+        <h1 id="hero-title">Slow mornings, <em>fully bloomed.</em></h1>
+        <p class="lead">Hand-finished borosilicate and copper-toned steel presses, made to turn every cup into a small ritual worth waking up for.</p>
+        <a class="btn" href="#collection">Shop the collection</a>
+        <p class="note">Free shipping across India · 2-year warranty</p>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="press">
+          <div class="steam"><i></i><i></i><i></i></div>
+          <div class="knob"></div>
+          <div class="rod"></div>
+          <div class="lid"></div>
+          <div class="glass"><div class="crema"></div></div>
+          <div class="frame"></div>
+          <div class="handle"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="collection" aria-labelledby="products-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="products-title">The Collection</h2>
+        <p>Three presses, one promise: a rich, sediment-light cup every time.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon" aria-hidden="true">☕</div>
+          <h3>The Petite</h3>
+          <div class="price">₹2,499</div>
+          <p>350 ml of quiet perfection for your solo morning.</p>
+        </article>
+        <article class="card featured">
+          <div class="icon" aria-hidden="true">🫖</div>
+          <h3>The Bloom</h3>
+          <div class="price">₹3,999</div>
+          <p>Our signature 600 ml press with double-wall insulation.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🌿</div>
+          <h3>The Grand Copper</h3>
+          <div class="price">₹5,799</div>
+          <p>1 litre of hammered copper-finish steel for gatherings.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="brew" aria-labelledby="brew-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="brew-title">How to Brew</h2>
+        <p>Four minutes, four steps, zero shortcuts.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="emoji" aria-hidden="true">⚖️</span>
+          <h3>Grind &amp; measure</h3>
+          <p>Add 30 g of coarse-ground coffee for every 500 ml of water.</p>
+        </li>
+        <li>
+          <span class="emoji" aria-hidden="true">💧</span>
+          <h3>Pour &amp; bloom</h3>
+          <p>Pour water just off the boil (93°C) to wet the grounds, then wait 30 seconds.</p>
+        </li>
+        <li>
+          <span class="emoji" aria-hidden="true">⏱️</span>
+          <h3>Steep</h3>
+          <p>Fill to the top, place the lid, and let it steep for 4 minutes.</p>
+        </li>
+        <li>
+          <span class="emoji" aria-hidden="true">🌸</span>
+          <h3>Press &amp; pour</h3>
+          <p>Press the plunger down slowly and serve right away.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="#top">Kettle <span>&amp;</span> Bloom</a>
+        <p>Premium French presses, designed for people who believe coffee deserves a little patience.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#brew">How to brew</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@kettleandbloom.example">hello@kettleandbloom.example</a></li>
+          <li>Mon–Sat, 10am–6pm IST</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">© 2026 Kettle &amp; Bloom. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
